@@ -1,13 +1,17 @@
 <section class="slider">
     <div class="container">
         <div class="slider_wr">
-            <h2>Торговые марки и производители запасных частей </h2>
+            <div class="slider_title_wr">
+                <h2>Торговые марки и производители запасных частей </h2>
+            <div class="slider_line"></div>
+            </div>
+            
             <div class="swiper-container">
                 <div class="swiper-wrapper" id="swiper-wrapper">
                     <!-- Слайды и изображения будут добавлены с помощью JavaScript -->
                 </div>
                 <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
         <div class="after_slider"></div>
@@ -15,79 +19,79 @@
 </section>
 <script>
     // Массив с названиями брендов
-const brands = [
-    "MEGAPOWER", "AGIP", "AGS (БСЗ)", "Allied Nippon", "AOTON", "AYDINSAN", "BP", "BROADWAY", "CAMELION", "CASTROL", "Cojali", "ContiTech", "CZ Strakonice", "DAFMI", "DIFA", "ELF", "ESPRA", "FEBI", "FENOX", "FERODO", "FRAM", "G-ENERGY", "GATES", "GE", "GKN-LOBRO", "HAMMERITE", "HEPU", "KENO-TANAKI", "Knorr-Bremse", "KS Pierburg", "LEMFOERDER", "LUCAS", "LUK", "LUKOIL", "Masuma", "MOBIL", "MONROE", "NEX", "OMFB", "PILENGA", "RUBENA", "RUEN", "SAKURA", "SKF", "VERNET", "WABCO", "WESTFALIA", "АВАР", "АВТОКОМПОНЕНТ ПЛЮС", "Автоприбор Калуга", "Автосвет Киржач", "Автотехнология", "Автоэлектроника Калуга", "Автоэлектроника Тверь", "АВТЭЛ", "Адверс", "АЗПИ", "АЗТН", "АИР Снарк", "АСТРО", "Атлант гидравлик", "БАКОР", "Венера", "ВЗЭП", "Волжский Стандарт", "ВПЗ-23", "ГЗАА", "Елпром - Елхово", "ЗА РУЛЕМ", "ЗИТ (КЗАТЭ)", "ЗУБР", "КЗАЭ", "КЗСК", "КЗТАА", "КрАЗ", "Лидсельмаш", "ЛЭТЗ", "Металлокомпенсатор", "МЗАТЭ-2", "МЗПС", "МОСГИДРОПРИВОД", "МЭМЗ", "Невский фильтр", "Неодизайн", "НОМАКОН", "ОРБИТА-САРАНСК", "ОСВАР", "Павловский ИЗ", "Паневежио Аурида", "Пензенский ПЗ", "ПЛАЗА", "ПМК-567", "ПОЛИПЕН", "Пустынь", "РААЗ", "Радиоволна", "РАЖ", "РЕЛКОМ", "РЕМИЗ", "РЗАА ЗИЛ", "РЗТЗ", "РОДИНА", "РОДОС", "Руденск", "Руслан-Комплект", "СААЗ", "САЗ - Сморгонь", "Сальсксельмаш", "САПСАН", "СТАРГЛАСС", "Стимул-Брест", "СЭВИ", "СЭПО", "ТАРА", "ТЗПС", "ТИМЕР", "ТНК", "ТОЧМАШ", "УКД", "УТЕС", "Цепи MetStyle.ru", "ЦИТ", "ЧАМЗ", "ЧЕТРА", "ЧЗСА", "ЧЗТА", "ЧКПЗ", "ЧТЗ", "Экран", "ЭЛАРА", "ЭМИ", "ЭТНА", "ЯВВА", "ЯЗТО-Авто", "HENGST", "Автодизель (ЯМЗ)", "JAC", "SHACMAN", "Sinotruk", "WEIFU", "ГАЗ", "REXANT", "ОЗАА", "ТМЗ", "СТАПРИ", "ПААЗ", "G-PROFI SERVICE LINE", "MERITOR", "ШААЗ", "Оренбургский радиатор", "БАКСАН", "Автоарматура", "СОАТЭ", "ТЗА", "ТРЕК", "ЭКОФИЛ", "ЦИТРОН (TSN)", "АВТОПРИБОР", "PEKAR", "Ливны", "ПРАМО", "HAMMER", "КРЕМЕНЧУГ", "ТАСПО", "HANDE AXLE", "BAW", "МЛЗ", "LEOTRADE", "АДС", "MODINE", "БелОМО", "TEXTAR", "ТАиМ", "БЗТДиА", "Борисовский завод агрегатов ОАО", "САЛЕО Кобрин (ГИДРОМАШ)", "БАЗ", "БАТЭ", "БАГУ", "Белкард", "Тутаевский МЗ", "TYC", "ЯЗДА", "SITRAK", "УМЗ", "HOWO", "SHAANXI", "SsangYong", "VALEO PHC", "ALFA CAR", "AVTOELECTRICA", "BOSAL", "BRT ASK", "CARWELL", "Dongfeng", "FAW", "G-PART", "KFM", "NIBK", "SACHS", "STARTEC", "Startvolt", "XO", "ZF", "АТЭ-1", "АЭНК", "ГПЗ", "ЛРЗ", "МТЗ", "Орион", "ПТП", "ЭНЕРГОМАШ", "Weichai", "ЗМЗ", "ММЗ", "УАЗ", "ЗИЛ", "КАМАЗ", "МАЗ", "УРАЛ", "Armstrong", "MAHLE", "SUNRISE", "Aim-One", "BRAKE BLOCKS", "FAST GEAR", "HCC", "Camel", "CREATEK", "EATON", "HUATAI", "QINYAN", "SHAFTGEAR", "HNG", "КАМАЗ Компас", "DAYCO", "Sampa", "GTE", "HONDA", "ABRO", "AE&T", "ALCA", "ALKAR", "ALSA", "ANJUN", "ASAM", "ASAS", "ASK", "ASTROHIM", "ATE", "AUGER", "AYFAR", "BANNER", "BASBUG", "Benefit", "BERAL", "BERGINFLEX", "BF", "BGS", "BIG FILTER", "Bilstein group", "Blue Print", "BORG WARNER", "Bosch", "BPW", "BREMBO", "BRIDGESTONE", "CAMOZZI", "CARGEN", "CAVETTO", "CHUNWOO (CHEONWOO)", "CLARIOS", "CONTINENTAL", "CORDIANT", "CORTECO", "CTR", "CUMMINS", "DAEJIN", "DAF", "DANA SPICER", "DELPHI", "DENSO", "DEPO", "DIESEL TECHNIC", "DINEX", "DOLZ", "DON", "DONALDSON", "DONGHWAN", "DONGIL", "DOOWON", "DUNLOP", "DYG", "EBERSPACHER", "EKER", "EKOFIL", "ELITECH", "ELRING", "ERA", "EURORICAMBI", "FAG", "FEBEST", "FILTRON", "FINFIRE", "FINWHALE", "FLEETGUARD", "FORCE", "FORD", "FORSAGE", "Foton", "FRIXA", "FTE", "FUBAG", "FUKOKU", "FYC", "GARRETT", "GAZPROMNEFT", "GENERAL MOTORS", "GEUN YOUNG", "GISLAVED", "GMB", "GMP", "GRASS", "HALDEX", "Halla", "HANS PRIES", "HI-GEAR", "HOLA", "HONGYAN", "HYUNDAI KIA", "ILJIN", "INA", "INFAC", "INZI", "ISKRAMOTOR", "ISTOK", "IVECO", "JHF", "JP", "JTC TOOLS", "KAINAR", "KALE", "KAYABA", "KBC", "KBP", "KEFICO", "KIA", "Kolbenschmidt", "KONGSBERG", "KORTEX", "KORUDA", "KOS", "KPR", "KRAUF", "KUMHO", "LANDSAIL", "LEMA", "LIQUI MOLY", "LONKING", "LUZAR", "LYNX", "MADARA", "MAGNETI MARELLI", "MAN", "MANDO", "MANN", "MANNOL", "MANSONS", "MARS TECH", "MATADOR", "MAYSAN MANDO", "MEKRA", "MERCEDES", "MetalPart", "MEYLE", "MICHELIN", "MOBIHEL", "MOBIS", "MOOG", "MOTIP", "MOTORPAL", "MOTUL", "MTF", "NAMYANG", "NARVA", "NGK", "NIPPARTS", "NISSENS", "NK", "Nokian Tyres", "NORPLAST", "NPR", "NRF", "OIL RIGHT", "OPEL", "OPTIMAL", "ORIUM", "OSRAM", "PALISAD", "PARTS MALL", "PATRON", "PERMATEX", "PETRONAS", "PHG", "PHILIPS", "PINGO", "Pirelli", "POLCAR", "POONG SUNG", "POS", "POSCO DAEWOO", "PRAVT", "PRESTOLITE", "RENAULT", "REPLICA", "RHEEJIN", "RIDZEL", "ROCKFORCE", "ROSTAR", "ROWE", "SAF", "SAMGONG GEAR", "SAMWON", "SANGSIN", "SASIC", "SB", "SCHMITZ", "SHINHAN", "SHINHWA", "SOLITE", "SORL", "SPRINGER", "STELLOX", "SUZUKI", "SWF", "TCIC", "TE PARTS", "TEHNOTRON", "TIGAR", "TORQUE", "TOYO", "TOYOTA", "TRANSMASTER UNIVERSAL", "Transpo", "TRIALLI", "TRIANGLE", "TRUCKTECHNIC", "TRW", "TYB", "VALEO", "VIATTI", "VICHURA", "VICTOR REINZ", "VIGNAL", "VITOCOM", "VOLVO", "WAI", "WALBERG", "WESTA", "WIRAX", "WMC Tools", "YOKOHAMA", "YON", "YPR", "YUMAK", "АВТОДЕЛО", "АВТОПЛАСТ", "АВТОРАД", "АвтоТрейд", "АВТОЭЛЕКТРИКА", "Автоэлектроконтакт", "АГРОПРОМСЕЛЬМАШ", "АЗГ", "АЙК ПК", "АККОР", "АЛТАЙШИНА", "АРМТТ", "АТ", "АТИ Завод", "БЕЖЕЦКСЕЛЬМАШ", "БЕЛЗАН", "БелОГ ОО", "БЕЛШИНА", "БОЛЬШАЯ ЗЕМЛЯ", "БРТ", "БХЗ", "ВЗТЗЧ", "ВОЛЧАНСКИЙ АГРЕГАТНЫЙ ЗАВОД", "Гибкие Соединения", "ГИДРОПРИВОД", "ДААЗ", "Дайдо Металл Русь", "ДЗВ", "ДОРМАШЭКСПО", "ЕПК", "ИЖОРСКИЙ ГЛУШИТЕЛЬ", "КАМА TYRES", "КОМПОЗИТ", "Костромской фильтр", "Круговой обзор", "КСТ", "ЛИТВИНА", "ЛОКНЕЯ", "Лужский АЗ", "МЗШ", "МОРДОВАГРОМАШ", "МОТОРДЕТАЛЬ", "НЕВА", "НЕФАЗ", "ОМК Чусовой", "ОРЕЛСТРОЙМАШ", "ПК ЛИМ", "ПРАМОТРОНИК", "РезиноТехнический Ресурс", "РЕСАНТА", "РЕССОРА НПФ", "РИАТ", "Росичъ", "Русский Двигатель", "СЕДАН", "Строймаш", "ТЕХАВТОСВЕТ", "ТЕХКОМ", "ТЕХМАШ", "Техно-драйв ООО", "Техно-Трейд", "ТЕХНОТРОН", "ТИИР", "ТИТАН (TUBOR)", "Топ Авто", "ТУРБОКОМ", "ТУРБОКОМПЛЕКТ", "Тюменский аккумуляторный завод", "УРАЛАТИ", "ФОРМУЛА СВЕТА", "ФРИТЕКС", "ХИЗ", "ЧРТИ", "ЧУСОВСКАЯ РЕССОРА", "ЭВРИКА", "MEGAPOWER AUTOMOTIVE", "MOVELEX", "TALER", "CHENGLONG", "ЮТАС"
-];
+    const brands = [
+        "MEGAPOWER", "AGIP", "AGS (БСЗ)", "Allied Nippon", "AOTON", "AYDINSAN", "BP", "BROADWAY", "CAMELION", "CASTROL", "Cojali", "ContiTech", "CZ Strakonice", "DAFMI", "DIFA", "ELF", "ESPRA", "FEBI", "FENOX", "FERODO", "FRAM", "G-ENERGY", "GATES", "GE", "GKN-LOBRO", "HAMMERITE", "HEPU", "KENO-TANAKI", "Knorr-Bremse", "KS Pierburg", "LEMFOERDER", "LUCAS", "LUK", "LUKOIL", "Masuma", "MOBIL", "MONROE", "NEX", "OMFB", "PILENGA", "RUBENA", "RUEN", "SAKURA", "SKF", "VERNET", "WABCO", "WESTFALIA", "АВАР", "АВТОКОМПОНЕНТ ПЛЮС", "Автоприбор Калуга", "Автосвет Киржач", "Автотехнология", "Автоэлектроника Калуга", "Автоэлектроника Тверь", "АВТЭЛ", "Адверс", "АЗПИ", "АЗТН", "АИР Снарк", "АСТРО", "Атлант гидравлик", "БАКОР", "Венера", "ВЗЭП", "Волжский Стандарт", "ВПЗ-23", "ГЗАА", "Елпром - Елхово", "ЗА РУЛЕМ", "ЗИТ (КЗАТЭ)", "ЗУБР", "КЗАЭ", "КЗСК", "КЗТАА", "КрАЗ", "Лидсельмаш", "ЛЭТЗ", "Металлокомпенсатор", "МЗАТЭ-2", "МЗПС", "МОСГИДРОПРИВОД", "МЭМЗ", "Невский фильтр", "Неодизайн", "НОМАКОН", "ОРБИТА-САРАНСК", "ОСВАР", "Павловский ИЗ", "Паневежио Аурида", "Пензенский ПЗ", "ПЛАЗА", "ПМК-567", "ПОЛИПЕН", "Пустынь", "РААЗ", "Радиоволна", "РАЖ", "РЕЛКОМ", "РЕМИЗ", "РЗАА ЗИЛ", "РЗТЗ", "РОДИНА", "РОДОС", "Руденск", "Руслан-Комплект", "СААЗ", "САЗ - Сморгонь", "Сальсксельмаш", "САПСАН", "СТАРГЛАСС", "Стимул-Брест", "СЭВИ", "СЭПО", "ТАРА", "ТЗПС", "ТИМЕР", "ТНК", "ТОЧМАШ", "УКД", "УТЕС", "Цепи MetStyle.ru", "ЦИТ", "ЧАМЗ", "ЧЕТРА", "ЧЗСА", "ЧЗТА", "ЧКПЗ", "ЧТЗ", "Экран", "ЭЛАРА", "ЭМИ", "ЭТНА", "ЯВВА", "ЯЗТО-Авто", "HENGST", "Автодизель (ЯМЗ)", "JAC", "SHACMAN", "Sinotruk", "WEIFU", "ГАЗ", "REXANT", "ОЗАА", "ТМЗ", "СТАПРИ", "ПААЗ", "G-PROFI SERVICE LINE", "MERITOR", "ШААЗ", "Оренбургский радиатор", "БАКСАН", "Автоарматура", "СОАТЭ", "ТЗА", "ТРЕК", "ЭКОФИЛ", "ЦИТРОН (TSN)", "АВТОПРИБОР", "PEKAR", "Ливны", "ПРАМО", "HAMMER", "КРЕМЕНЧУГ", "ТАСПО", "HANDE AXLE", "BAW", "МЛЗ", "LEOTRADE", "АДС", "MODINE", "БелОМО", "TEXTAR", "ТАиМ", "БЗТДиА", "Борисовский завод агрегатов ОАО", "САЛЕО Кобрин (ГИДРОМАШ)", "БАЗ", "БАТЭ", "БАГУ", "Белкард", "Тутаевский МЗ", "TYC", "ЯЗДА", "SITRAK", "УМЗ", "HOWO", "SHAANXI", "SsangYong", "VALEO PHC", "ALFA CAR", "AVTOELECTRICA", "BOSAL", "BRT ASK", "CARWELL", "Dongfeng", "FAW", "G-PART", "KFM", "NIBK", "SACHS", "STARTEC", "Startvolt", "XO", "ZF", "АТЭ-1", "АЭНК", "ГПЗ", "ЛРЗ", "МТЗ", "Орион", "ПТП", "ЭНЕРГОМАШ", "Weichai", "ЗМЗ", "ММЗ", "УАЗ", "ЗИЛ", "КАМАЗ", "МАЗ", "УРАЛ", "Armstrong", "MAHLE", "SUNRISE", "Aim-One", "BRAKE BLOCKS", "FAST GEAR", "HCC", "Camel", "CREATEK", "EATON", "HUATAI", "QINYAN", "SHAFTGEAR", "HNG", "КАМАЗ Компас", "DAYCO", "Sampa", "GTE", "HONDA", "ABRO", "AE&T", "ALCA", "ALKAR", "ALSA", "ANJUN", "ASAM", "ASAS", "ASK", "ASTROHIM", "ATE", "AUGER", "AYFAR", "BANNER", "BASBUG", "Benefit", "BERAL", "BERGINFLEX", "BF", "BGS", "BIG FILTER", "Bilstein group", "Blue Print", "BORG WARNER", "Bosch", "BPW", "BREMBO", "BRIDGESTONE", "CAMOZZI", "CARGEN", "CAVETTO", "CHUNWOO (CHEONWOO)", "CLARIOS", "CONTINENTAL", "CORDIANT", "CORTECO", "CTR", "CUMMINS", "DAEJIN", "DAF", "DANA SPICER", "DELPHI", "DENSO", "DEPO", "DIESEL TECHNIC", "DINEX", "DOLZ", "DON", "DONALDSON", "DONGHWAN", "DONGIL", "DOOWON", "DUNLOP", "DYG", "EBERSPACHER", "EKER", "EKOFIL", "ELITECH", "ELRING", "ERA", "EURORICAMBI", "FAG", "FEBEST", "FILTRON", "FINFIRE", "FINWHALE", "FLEETGUARD", "FORCE", "FORD", "FORSAGE", "Foton", "FRIXA", "FTE", "FUBAG", "FUKOKU", "FYC", "GARRETT", "GAZPROMNEFT", "GENERAL MOTORS", "GEUN YOUNG", "GISLAVED", "GMB", "GMP", "GRASS", "HALDEX", "Halla", "HANS PRIES", "HI-GEAR", "HOLA", "HONGYAN", "HYUNDAI KIA", "ILJIN", "INA", "INFAC", "INZI", "ISKRAMOTOR", "ISTOK", "IVECO", "JHF", "JP", "JTC TOOLS", "KAINAR", "KALE", "KAYABA", "KBC", "KBP", "KEFICO", "KIA", "Kolbenschmidt", "KONGSBERG", "KORTEX", "KORUDA", "KOS", "KPR", "KRAUF", "KUMHO", "LANDSAIL", "LEMA", "LIQUI MOLY", "LONKING", "LUZAR", "LYNX", "MADARA", "MAGNETI MARELLI", "MAN", "MANDO", "MANN", "MANNOL", "MANSONS", "MARS TECH", "MATADOR", "MAYSAN MANDO", "MEKRA", "MERCEDES", "MetalPart", "MEYLE", "MICHELIN", "MOBIHEL", "MOBIS", "MOOG", "MOTIP", "MOTORPAL", "MOTUL", "MTF", "NAMYANG", "NARVA", "NGK", "NIPPARTS", "NISSENS", "NK", "Nokian Tyres", "NORPLAST", "NPR", "NRF", "OIL RIGHT", "OPEL", "OPTIMAL", "ORIUM", "OSRAM", "PALISAD", "PARTS MALL", "PATRON", "PERMATEX", "PETRONAS", "PHG", "PHILIPS", "PINGO", "Pirelli", "POLCAR", "POONG SUNG", "POS", "POSCO DAEWOO", "PRAVT", "PRESTOLITE", "RENAULT", "REPLICA", "RHEEJIN", "RIDZEL", "ROCKFORCE", "ROSTAR", "ROWE", "SAF", "SAMGONG GEAR", "SAMWON", "SANGSIN", "SASIC", "SB", "SCHMITZ", "SHINHAN", "SHINHWA", "SOLITE", "SORL", "SPRINGER", "STELLOX", "SUZUKI", "SWF", "TCIC", "TE PARTS", "TEHNOTRON", "TIGAR", "TORQUE", "TOYO", "TOYOTA", "TRANSMASTER UNIVERSAL", "Transpo", "TRIALLI", "TRIANGLE", "TRUCKTECHNIC", "TRW", "TYB", "VALEO", "VIATTI", "VICHURA", "VICTOR REINZ", "VIGNAL", "VITOCOM", "VOLVO", "WAI", "WALBERG", "WESTA", "WIRAX", "WMC Tools", "YOKOHAMA", "YON", "YPR", "YUMAK", "АВТОДЕЛО", "АВТОПЛАСТ", "АВТОРАД", "АвтоТрейд", "АВТОЭЛЕКТРИКА", "Автоэлектроконтакт", "АГРОПРОМСЕЛЬМАШ", "АЗГ", "АЙК ПК", "АККОР", "АЛТАЙШИНА", "АРМТТ", "АТ", "АТИ Завод", "БЕЖЕЦКСЕЛЬМАШ", "БЕЛЗАН", "БелОГ ОО", "БЕЛШИНА", "БОЛЬШАЯ ЗЕМЛЯ", "БРТ", "БХЗ", "ВЗТЗЧ", "ВОЛЧАНСКИЙ АГРЕГАТНЫЙ ЗАВОД", "Гибкие Соединения", "ГИДРОПРИВОД", "ДААЗ", "Дайдо Металл Русь", "ДЗВ", "ДОРМАШЭКСПО", "ЕПК", "ИЖОРСКИЙ ГЛУШИТЕЛЬ", "КАМА TYRES", "КОМПОЗИТ", "Костромской фильтр", "Круговой обзор", "КСТ", "ЛИТВИНА", "ЛОКНЕЯ", "Лужский АЗ", "МЗШ", "МОРДОВАГРОМАШ", "МОТОРДЕТАЛЬ", "НЕВА", "НЕФАЗ", "ОМК Чусовой", "ОРЕЛСТРОЙМАШ", "ПК ЛИМ", "ПРАМОТРОНИК", "РезиноТехнический Ресурс", "РЕСАНТА", "РЕССОРА НПФ", "РИАТ", "Росичъ", "Русский Двигатель", "СЕДАН", "Строймаш", "ТЕХАВТОСВЕТ", "ТЕХКОМ", "ТЕХМАШ", "Техно-драйв ООО", "Техно-Трейд", "ТЕХНОТРОН", "ТИИР", "ТИТАН (TUBOR)", "Топ Авто", "ТУРБОКОМ", "ТУРБОКОМПЛЕКТ", "Тюменский аккумуляторный завод", "УРАЛАТИ", "ФОРМУЛА СВЕТА", "ФРИТЕКС", "ХИЗ", "ЧРТИ", "ЧУСОВСКАЯ РЕССОРА", "ЭВРИКА", "MEGAPOWER AUTOMOTIVE", "MOVELEX", "TALER", "CHENGLONG", "ЮТАС"
+    ];
 
-// Функция для создания слайдов
-function createSlides(totalImages, imagesPerSlide) {
-    const swiperWrapper = document.getElementById('swiper-wrapper');
+    // Функция для создания слайдов
+    function createSlides(totalImages, imagesPerSlide) {
+        const swiperWrapper = document.getElementById('swiper-wrapper');
 
-    // Вычисляем количество слайдов
-    const totalSlides = Math.ceil(totalImages / imagesPerSlide);
+        // Вычисляем количество слайдов
+        const totalSlides = Math.ceil(totalImages / imagesPerSlide);
 
-    for (let slideIndex = 0; slideIndex < totalSlides; slideIndex++) {
-        // Создаем слайд
-        const slide = document.createElement('div');
-        slide.classList.add('swiper-slide');
+        for (let slideIndex = 0; slideIndex < totalSlides; slideIndex++) {
+            // Создаем слайд
+            const slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
 
-        // Создаем контейнер для сетки изображений
-        const imageGrid = document.createElement('div');
-        imageGrid.classList.add('image-grid');
+            // Создаем контейнер для сетки изображений
+            const imageGrid = document.createElement('div');
+            imageGrid.classList.add('image-grid');
 
-        // Добавляем изображения в слайд
-        for (let i = 0; i < imagesPerSlide; i++) {
-            const imageIndex = slideIndex * imagesPerSlide + i;
+            // Добавляем изображения в слайд
+            for (let i = 0; i < imagesPerSlide; i++) {
+                const imageIndex = slideIndex * imagesPerSlide + i;
 
-            // Если изображений больше, чем нужно, выходим из цикла
-            if (imageIndex >= totalImages) break;
+                // Если изображений больше, чем нужно, выходим из цикла
+                if (imageIndex >= totalImages) break;
 
-            // Создаем обёртку для изображения
-            const imageGridWrapper = document.createElement('div');
-            imageGridWrapper.classList.add('image-grid-wr');
+                // Создаем обёртку для изображения
+                const imageGridWrapper = document.createElement('div');
+                imageGridWrapper.classList.add('image-grid-wr');
 
-            // Создаем изображение
-            const img = document.createElement('img');
-            img.classList.add('swiper-lazy');
-            img.setAttribute('src', `img/slider/${imageIndex + 1}.jpg`);
-            img.setAttribute('alt', `Image ${imageIndex + 1}`);
+                // Создаем изображение
+                const img = document.createElement('img');
+                img.classList.add('swiper-lazy');
+                img.setAttribute('src', `img/slider/${imageIndex + 1}.jpg`);
+                img.setAttribute('alt', `Image ${imageIndex + 1}`);
 
-            // Создаем текст с названием бренда
-            const brandText = document.createElement('p');
-            brandText.textContent = brands[imageIndex]; // Используем название из массива
+                // Создаем текст с названием бренда
+                const brandText = document.createElement('p');
+                brandText.textContent = brands[imageIndex]; // Используем название из массива
 
-            // Добавляем изображение и текст в обёртку
-            imageGridWrapper.appendChild(img);
-            imageGridWrapper.appendChild(brandText);
+                // Добавляем изображение и текст в обёртку
+                imageGridWrapper.appendChild(img);
+                imageGridWrapper.appendChild(brandText);
 
-            // Добавляем обёртку в сетку изображений
-            imageGrid.appendChild(imageGridWrapper);
+                // Добавляем обёртку в сетку изображений
+                imageGrid.appendChild(imageGridWrapper);
+            }
+
+            // Добавляем сетку изображений в слайд
+            slide.appendChild(imageGrid);
+
+            // Добавляем слайд в Swiper
+            swiperWrapper.appendChild(slide);
         }
-
-        // Добавляем сетку изображений в слайд
-        slide.appendChild(imageGrid);
-
-        // Добавляем слайд в Swiper
-        swiperWrapper.appendChild(slide);
     }
-}
 
-// Вызываем функцию для создания слайдов
-createSlides(545, 30);
+    // Вызываем функцию для создания слайдов
+    createSlides(545, 30);
 </script>
 <script>
-const swiper = new Swiper('.swiper-container', {
-    lazy: {
-        loadPrevNext: true,
-        loadOnTransitionStart: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-});
+    const swiper = new Swiper('.swiper-container', {
+        lazy: {
+            loadPrevNext: true,
+            loadOnTransitionStart: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
 </script>

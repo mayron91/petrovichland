@@ -173,3 +173,71 @@ height: 20PX;
     font-size: 18PX;
     font-weight: 400;
 }
+
+@media (min-width: 1400px) {
+    .footer {
+        width: 100%;
+        max-width: 1440PX;
+        margin: 0 auto;
+    }
+    .feedback_wr {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .feedback_logo {
+        width: 138PX;
+        height: 180PX;
+        margin-top: 65PX;
+        margin-left: 30PX;
+    }
+    .details_wr {
+        width: 330PX;
+        margin: 30PX 0 0 95PX;
+    }
+    .details_wr h2 {
+        text-align: left;
+        font-size: 24PX;
+        font-weight: 600;
+    }
+    .details_wr p {
+        font-size: 16PX;
+        font-weight: 400;
+    }
+    .feedback_contacts_wr {
+        width: 330PX;
+        margin: 30PX 0 0 25PX;
+    }
+    .feedback_contacts_wr h2 {
+        text-align: left;
+        font-size: 24PX;
+        font-weight: 500;
+    }
+    .feedback_contacts_item a {
+        font-size: 16PX;
+        font-weight: 400;
+    }
+    .feedback_contacts_item p {
+        font-size: 16PX;
+        font-weight: 400;
+    }
+    .feedback_form {
+        width: 328PX;
+        margin: 15PX 0 0 30PX;
+        
+    }
+    .feedback-form {
+        padding: 0 !important;
+    }
+    .feedback_form h2 {
+        text-align: left;
+    }
+    .form-group input[type="tel"] {
+        max-width: 300PX;
+    }
+    .submit-button {
+        max-width: 300PX;  
+    }
+    .copyright {
+        margin-top: 40PX;
+    }
+}
