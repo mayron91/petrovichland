@@ -1,5 +1,117 @@
 <footer class="footer">
     <div class="container">
-        <p>{{ vars.address }}</p>
+        <div class="feedback_wr">
+            <img src="img/logo.svg" alt="" class="feedback_logo">
+            <div class="details_wr">
+                <h2>ИП Малинина С.Г.</h2>
+                <p>ИНН 332402724822</p>
+                    <p>ОГРНИП 319332800021712</p>
+            </div>
+            <div class="feedback_contacts_wr">
+                <h2>Контакты</h2>
+                <div class="feedback_contacts_item">
+                    <a href="tel:+79046534971"><img src="img/phone.svg" class="feedback_phone" alt="">+7 904 653 49 71</a>
+                </div>
+                <div class="feedback_contacts_item">
+                    <a href="mailto:R9046534971@yandex.ru"><img src="img/mail.svg" class="feedback_mail" alt="">R9046534971@yandex.ru</a>
+                </div>
+                <div class="feedback_contacts_item">
+                    <img src="img/time.svg" class="feedback_time" alt=""><p>Пн-Пт: 8:00 — 18:00</p>
+                </div>
+            </div>
+            <div class="feedback_form">
+                <h2>Оставить заявку</h2>
+                <form id="feedbackForm" class="feedback-form">
+                    <!-- Поле для ввода номера телефона -->
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="+7 ___-___-__-__" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                
+                    <!-- Чекбокс согласия -->
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <span>Согласен на обработку персональных данных</span>
+                        </label>
+                        <span class="error-message" id="agreeError"></span>
+                    </div>
+                
+                    <!-- Кнопка отправки -->
+                    <button type="submit" class="submit-button">Отправить</button>
+                
+                    <!-- Сообщение об успешной отправке или ошибке -->
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
     </div>
+    <div class="copyright">Copyright © 2025 </div>
 </footer>
+<!--stycky header-->
+<script>
+   window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 10) {
+        header.classList.add('sticky');
+    } else {
+        header.classList.remove('sticky');
+    }
+});
+  </script> 
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Отменяем стандартную отправку формы
+
+    // Очищаем сообщения об ошибках
+    document.getElementById('phoneError').style.display = 'none';
+    document.getElementById('agreeError').style.display = 'none';
+
+    // Получаем значения полей
+    const phone = document.getElementById('phone').value.trim();
+    const agree = document.getElementById('agree').checked;
+
+    // Валидация номера телефона
+    const phonePattern = /^\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$/;
+    if (!phonePattern.test(phone)) {
+        document.getElementById('phoneError').textContent = 'Введите корректный номер телефона';
+        document.getElementById('phoneError').style.display = 'block';
+        return;
+    }
+
+    // Валидация чекбокса
+    if (!agree) {
+        document.getElementById('agreeError').textContent = 'Необходимо согласие на обработку данных';
+        document.getElementById('agreeError').style.display = 'block';
+        return;
+    }
+
+    // Отправка данных на сервер
+    const formData = new FormData(this);
+    fetch('scripts/send_form.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        const message = document.getElementById('formMessage');
+        if (data.success) {
+            message.textContent = 'Форма успешно отправлена!';
+            message.classList.add('success');
+            message.style.display = 'block';
+            document.getElementById('feedbackForm').reset(); // Очищаем форму
+        } else {
+            message.textContent = 'Ошибка при отправке формы. Попробуйте ещё раз.';
+            message.classList.add('error');
+            message.style.display = 'block';
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        const message = document.getElementById('formMessage');
+        message.textContent = 'Ошибка при отправке формы. Попробуйте ещё раз.';
+        message.classList.add('error');
+        message.style.display = 'block';
+    });
+});
+</script>
