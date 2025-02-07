@@ -36,6 +36,20 @@ p {
     font-weight: 400;
     font-size: 16PX;
 }
+@media (min-width: 768px) {
+    h1 {
+        font-weight: 700;
+        font-size: 30PX;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 24PX;
+    }
+    p {
+        font-weight: 500;
+        font-size: 18PX;
+    } 
+}
 @media (min-width: 1400px) {
     h1 {
         font-weight: 700;

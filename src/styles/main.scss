@@ -250,11 +250,108 @@ a {
 .slider_line {
     display: none;
 }
+/*768*/
+@media (min-width: 768px) {
+    .hero {
+        width: 100%;
+        height: 500PX;
+        margin: 100PX auto 0 auto;
+        max-width: 1440PX;
+        background: url("../img/hero.png") no-repeat 100% 100%;
+    }
+    .about_wr {
+        height: 378PX;
+    }
+    .contacts {
+        width: 100%;
+        height: 495PX;
+        margin: 0 auto;
+        max-width: 1440PX;
+        background: url("../img/contact.png") no-repeat 0% 0%;
+    }
+   .contacts_wr {
+    display: flex;
+    flex-direction: column;
+   }
+    .contacts_title_wr {
+        margin-top: 35PX;
+    }
+    .contacts_line {
+        width: 45%;
+        margin-top: 25PX;
+        border-radius: 0;
+    }
+    .contacts_title_wr h2 {
+        width: auto;
+    }
+    .contacts_tel_wr_inner {
+        width: 40%;
+        
+    }
+    .contacts_tel_wr_inner:nth-child(odd) {
+        padding-left: 90PX;
+    }
+    .contacts_tel_wr {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-top: 30PX;
+    }
+    .contacts_tel-marg {
+        margin-top: 0;
+    }
+    .contacts_tel_wr_inner p {
+        width: 100%;
+        font-size: 18PX;
+        font-weight: 500;
+        margin: 20PX 0 5PX 0;
+    }
+    .contacts_tel_wr_inner a {
+        font-size: 20PX;
+        font-weight: 700;
+        width: 100%;
+        margin: 15PX 0 5PX 0;
+    }
+    .contacts_info_wr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    align-items: flex-end;
+    
+    }
+   .contacts_info {
+    margin-top: 45PX;
+    margin-bottom: 15PX;
+    font-size: 22PX;
+    color: #030C50;
+    width: 80%;
+    padding-left: 90PX;
+   }
+   .contacts_email {
+    padding-left: 10PX;
+    font-size: 22PX;
+    margin-top: 0PX;
+    width: 80%;
+    padding-left: 90PX;
+   }
+   .contacts_email img {
+    width: 28PX;
+    height: 22PX;
+   }
+   .image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 3 колонок */
+    gap: 20px; /* Расстояние между изображениями */
+    padding: 10px;
+}
+
+}
 /**1440**/
 @media (min-width: 1400px) {
     .container {
         max-width: 1440PX;
     }
+    
     .hero {
         width: 100%;
         height: 500PX;
@@ -332,7 +429,12 @@ a {
         width: 100%;
         margin: 15PX 0 5PX 0;
     }
+    .contacts_info_wr {
+        display: flex;
+        flex-direction: column;
+    }
    .contacts_info {
+    width: 100%;
     max-width: 1100PX;
     align-self: flex-end;
     padding-left: 80PX;
@@ -342,8 +444,9 @@ a {
     color: #030C50;
    }
    .contacts_email {
+    width: 100%;
     max-width: 1100PX;
-    margin-left: 370PX;
+    padding-left: 80PX;
     font-size: 28PX;
     margin-top: 0PX;
    }
@@ -357,6 +460,7 @@ a {
    }
    .slider_wr h2 {
     margin-top: 25PX;
+    margin-left: 40PX;
    }
    .slider_title_wr {
     display: flex;
