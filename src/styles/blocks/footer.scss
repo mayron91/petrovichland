@@ -196,9 +196,6 @@ height: 20PX;
     .feedback_contacts_wr {
         width: 40%;
     }
-    .feedback_form {
-        width: 100%;
-    }
     .details_wr h2 {
         text-align: left;
         margin-top: 10PX;
@@ -211,7 +208,6 @@ height: 20PX;
 @media (min-width: 1400px) {
     .footer {
         width: 100%;
-        max-width: 1440PX;
         margin: 0 auto;
     }
     .feedback_wr {
