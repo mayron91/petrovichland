@@ -344,6 +344,9 @@ a {
     gap: 20px; /* Расстояние между изображениями */
     padding: 10px;
 }
+.image-grid-wr p {
+    font-size: 16PX;
+}
 
 }
 /**1440**/
@@ -478,10 +481,10 @@ a {
     top: -35PX !important;
    }
    .swiper-button-next {
-    right: 40PX !important;
+    right: 0PX !important;
    }
    .swiper-button-prev {
-    left: 1240PX !important;
+    left: 95% !important;
    }
    .image-grid {
     display: grid;
